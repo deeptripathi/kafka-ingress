@@ -1,6 +1,18 @@
 version: '2.1'
 
 services:
+  app:
+    restart: always
+    build:
+      context: ./
+    container_name: app
+
+    ports:
+      - 8080:8080
+    depends_on:
+      - kafka
+      - zookeeper
+
   kafka:
     image: wurstmeister/kafka
     container_name: 'kafka'
@@ -22,6 +34,8 @@ services:
       - 9093:9093
 
 
+
   zookeeper:
     container_name: 'zookeeper'
     image: wurstmeister/zookeeper
+

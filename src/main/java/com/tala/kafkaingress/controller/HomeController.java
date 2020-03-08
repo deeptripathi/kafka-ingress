@@ -10,6 +10,6 @@ public class HomeController {
     @RequestMapping("/")
     public String main()
     {
-        return "Welcome To Kafka Demo new!";
+        return "Welcome To Kafka-Ingress Demo!";
     }
 }
