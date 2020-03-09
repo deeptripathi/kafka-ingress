@@ -34,8 +34,8 @@ public class KafkaController {
         template.send("test_topic", message);
     }
 
-    @PostMapping("/kafka/averoproducer")
-    public String averoproducer(@RequestParam String message) {
+    @PostMapping("/kafka/avroproducer")
+    public String avroproducer(@RequestParam String message) {
 
         Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", "kafka1:19092");
@@ -51,8 +51,8 @@ public class KafkaController {
         String topic = "person_topic";
 
         Person personRecord = Person.newBuilder()
-                .setFirstName("Deepak")
-                .setLastName("Tripathi")
+                .setFirstName("FirstName")
+                .setLastName("LastName")
                 .build();
 
         ProducerRecord<String, Person> producerRecord = new ProducerRecord<String, Person>(
