@@ -15,7 +15,7 @@ import java.util.Map;
 @Configuration
 public class ProducerConfiguration {
 
-    private static final String KAFKA_BROKER = "kafka:9093";
+    private static final String KAFKA_BROKER = "kafka1:19092";
 
     @Bean
     public ProducerFactory<String, String> producerFactory() {
