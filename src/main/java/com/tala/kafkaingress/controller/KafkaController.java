@@ -38,7 +38,7 @@ public class KafkaController {
     public String averoproducer(@RequestParam String message) {
 
         Properties properties = new Properties();
-        properties.setProperty("bootstrap.servers", "kafka:9092");
+        properties.setProperty("bootstrap.servers", "kafka1:19092");
         properties.setProperty("acks", "1");
         properties.setProperty("retries", "10");
 
