@@ -38,14 +38,14 @@ public class KafkaController {
     public String avroproducer(@RequestParam String message) {
 
         Properties properties = new Properties();
-        properties.setProperty("bootstrap.servers", "kafka1:19092");
+        properties.setProperty("bootstrap.servers", "broker:29092");
         properties.setProperty("acks", "1");
         properties.setProperty("retries", "10");
 
         properties.setProperty("key.serializer", StringSerializer.class.getName());
 
         properties.setProperty("value.serializer", KafkaAvroSerializer.class.getName());
-        properties.setProperty("schema.registry.url", "http://127.0.0.1:8081");
+        properties.setProperty("schema.registry.url", "http://schema-registry:8081");
 
         KafkaProducer<String, Person> kafkaProducer = new KafkaProducer<String, Person>(properties);
         String topic = "person_topic";
